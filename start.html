@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Мои ссылки</title>
+<style>
+body {
+  margin: 0;
+  background: #0a0a0a;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+h1 {
+  text-align: center;
+  padding: 20px;
+  font-size: 28px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  padding: 24px;
+}
+a {
+  text-decoration: none;
+}
+.tile {
+  height: 130px;
+  background: #1f1f1f;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e0e0e0;
+  font-size: 22px;
+  font-weight: bold;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+.tile:hover {
+  background: #2a2a2a;
+  transform: scale(1.06);
+}
+</style>
+</head>
+<body>
+
+<h1>Мои быстрые ссылки</h1>
+
+<div class="grid">
+  <a href="https://news.sportbox.ru/?ysclid=miwhp52i4e176879947" target="_blank">
+    <div class="tile">Sportbox: Новости</div>
+  </a>
+  <a href="https://www.gismeteo.kz/weather-petropavlovsk-4574/10-days/" target="_blank">
+    <div class="tile">Gismeteo: Погода</div>
+  </a>
+</div>
+
+</body>
+</html>
