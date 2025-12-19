@@ -8,8 +8,7 @@
     margin: 0;
     height: 100%;
     font-family: sans-serif;
-    background: url('https://images.unsplash.com/photo-1603052875644-7d25b6351c5b?fit=crop&w=1920&q=80') no-repeat center center fixed;
-    background-size: cover;
+    background: linear-gradient(135deg, #000000, #111111, #222222);
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -19,16 +18,16 @@
     margin-top: 30px;
     font-size: 3em;
     font-weight: bold;
-    text-shadow: 2px 2px 5px #000;
+    text-shadow: 2px 2px 6px #000;
   }
   .search-container {
     margin: 20px 0;
     position: relative;
   }
   input[type="text"] {
-    font-size: 1.5em;
+    font-size: 1.4em;
     padding: 10px 40px 10px 40px;
-    width: 600px;
+    width: 550px;
     border-radius: 25px;
     border: none;
     outline: none;
@@ -46,7 +45,7 @@
   .tiles {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
     margin-top: 20px;
     overflow-x: auto;
     padding-bottom: 20px;
@@ -55,20 +54,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 140px;
-    height: 100px;
-    border-radius: 15px;
+    width: 120px;
+    height: 80px;
+    border-radius: 12px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     color: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.7);
     transition: transform 0.2s, box-shadow 0.2s;
     flex-shrink: 0;
   }
   a.tile:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(255,255,255,0.7);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(255,255,255,0.6);
   }
   .sportbox { background: #e74c3c; }
   .gismeteo { background: #3498db; }
@@ -111,4 +110,5 @@
 </script>
 </body>
 </html>
+
 
