@@ -8,7 +8,8 @@
     margin: 0;
     height: 100%;
     font-family: sans-serif;
-    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    background: url('https://images.unsplash.com/photo-1603052875644-7d25b6351c5b?fit=crop&w=1920&q=80') no-repeat center center fixed;
+    background-size: cover;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -18,6 +19,7 @@
     margin-top: 30px;
     font-size: 3em;
     font-weight: bold;
+    text-shadow: 2px 2px 5px #000;
   }
   .search-container {
     margin: 20px 0;
@@ -26,11 +28,11 @@
   input[type="text"] {
     font-size: 1.5em;
     padding: 10px 40px 10px 40px;
-    width: 650px;
+    width: 600px;
     border-radius: 25px;
     border: none;
     outline: none;
-    background-color: #222;
+    background-color: rgba(0,0,0,0.7);
     color: #fff;
   }
   .search-container img {
@@ -43,36 +45,30 @@
   }
   .tiles {
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
     overflow-x: auto;
     padding-bottom: 20px;
   }
   a.tile {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 180px;
-    height: 120px;
-    border-radius: 20px;
+    width: 140px;
+    height: 100px;
+    border-radius: 15px;
     text-decoration: none;
     font-size: 16px;
+    font-weight: bold;
     color: #fff;
-    background: #333;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+    transition: transform 0.2s, box-shadow 0.2s;
     flex-shrink: 0;
   }
-  a.tile img {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 10px;
-  }
-  a.tile:focus {
-    outline: none;
-    transform: translateY(-5px) scale(1.15);
+  a.tile:hover {
+    transform: translateY(-5px) scale(1.05);
     box-shadow: 0 10px 25px rgba(255,255,255,0.7);
-    background: #444;
   }
   .sportbox { background: #e74c3c; }
   .gismeteo { background: #3498db; }
@@ -92,34 +88,17 @@
     <input type="text" name="q" placeholder="Поиск Google" />
   </form>
 </div>
-<div class="tiles" id="tiles">
-  <a href="https://news.sportbox.ru/?ysclid=miwhp52i4e176879947" class="tile sportbox" tabindex="0">
-    <img src="https://upload.wikimedia.org/wikipedia/ru/thumb/9/94/Sportbox_logo.svg/120px-Sportbox_logo.svg.png" alt="Sportbox"> Sportbox
-  </a>
-  <a href="https://www.gismeteo.kz/weather-petropavlovsk-4574/10-days/" class="tile gismeteo" tabindex="0">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Gismeteo_Logo.svg/120px-Gismeteo_Logo.svg.png" alt="Gismeteo"> Gismeteo
-  </a>
-  <a href="https://androidtvbox.ru/" class="tile androidtv" tabindex="0">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Android_logo_2019.svg/64px-Android_logo_2019.svg.png" alt="Android TV"> Android TV
-  </a>
-  <a href="http://new-rutor.org/browse/0/1/0/4/" class="tile rutor" tabindex="0">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Rutor_logo.svg/64px-Rutor_logo.svg.png" alt="Rutor"> Rutor
-  </a>
-  <a href="https://rutracker.me/forum/tracker.php" class="tile rutracker" tabindex="0">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Rutracker_logo.svg/64px-Rutracker_logo.svg.png" alt="Rutracker"> Rutracker
-  </a>
-  <a href="https://rutracker.me/forum/tracker.php?nm=ufc" class="tile ufc" tabindex="0">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/UFC_logo.svg/64px-UFC_logo.svg.png" alt="UFC"> UFC
-  </a>
-  <a href="https://rutracker.me/forum/tracker.php?f=1997,259&nm=nba" class="tile nba" tabindex="0">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/NBA_logo.svg/64px-NBA_logo.svg.png" alt="NBA"> NBA
-  </a>
-  <a href="https://rutracker.me/forum/tracker.php?f=259&nm=nhl" class="tile nhl" tabindex="0">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/NHL_Shield.svg/64px-NHL_Shield.svg.png" alt="NHL"> NHL
-  </a>
+<div class="tiles">
+  <a href="https://news.sportbox.ru/?ysclid=miwhp52i4e176879947" class="tile sportbox">Sportbox</a>
+  <a href="https://www.gismeteo.kz/weather-petropavlovsk-4574/10-days/" class="tile gismeteo">Gismeteo</a>
+  <a href="https://androidtvbox.ru/" class="tile androidtv">Android TV</a>
+  <a href="http://new-rutor.org/browse/0/1/0/4/" class="tile rutor">Rutor</a>
+  <a href="https://rutracker.me/forum/tracker.php" class="tile rutracker">Rutracker</a>
+  <a href="https://rutracker.me/forum/tracker.php?nm=ufc" class="tile ufc">UFC</a>
+  <a href="https://rutracker.me/forum/tracker.php?f=1997,259&nm=nba" class="tile nba">NBA</a>
+  <a href="https://rutracker.me/forum/tracker.php?f=259&nm=nhl" class="tile nhl">NHL</a>
 </div>
 <script>
-  // часы
   function updateClock() {
     const now = new Date();
     const hours = String(now.getHours()).padStart(2,'0');
@@ -129,23 +108,7 @@
   }
   setInterval(updateClock, 1000);
   updateClock();
-
-  // управление пультом
-  const tiles = Array.from(document.querySelectorAll('.tile'));
-  let current = 0;
-  tiles[current].focus();
-
-  document.addEventListener('keydown', (e) => {
-    if(e.key === 'ArrowRight') {
-      current = (current + 1) % tiles.length;
-      tiles[current].focus();
-    } else if(e.key === 'ArrowLeft') {
-      current = (current - 1 + tiles.length) % tiles.length;
-      tiles[current].focus();
-    } else if(e.key === 'Enter') {
-      tiles[current].click();
-    }
-  });
 </script>
 </body>
 </html>
+
