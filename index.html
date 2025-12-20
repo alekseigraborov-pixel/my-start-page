@@ -2,117 +2,164 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Стартовая страница TV</title>
+<title>Start TV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-  html, body {
-    margin: 0;
-    height: 100%;
-    font-family: sans-serif;
-    /* Фактурные 3D черные обои */
-    background: url('https://images.unsplash.com/photo-1581091870623-1e52e0380c77?fit=crop&w=1920&q=80') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .clock {
-    margin-top: 30px;
-    font-size: 3em;
-    font-weight: bold;
-    text-shadow: 2px 2px 6px #000;
-  }
-  .search-container {
-    margin: 20px 0;
-    position: relative;
-  }
-  input[type="text"] {
-    font-size: 1.4em;
-    padding: 10px 40px 10px 40px;
-    width: 500px;
-    border-radius: 25px;
-    border: none;
-    outline: none;
-    background-color: rgba(0,0,0,0.7);
-    color: #fff;
-  }
-  .search-container img {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    width: 24px;
-    height: 24px;
-  }
-  .tiles {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 20px;
-    overflow-x: auto;
-    padding-bottom: 20px;
-  }
-  a.tile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 110px;
-    height: 70px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    color: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.8);
-    transition: transform 0.2s, box-shadow 0.2s;
-    flex-shrink: 0;
-  }
-  a.tile:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(255,255,255,0.5);
-  }
-  .sportbox { background: #e74c3c; }
-  .gismeteo { background: #3498db; }
-  .androidtv { background: #2ecc71; }
-  .rutor { background: #9b59b6; }
-  .rutracker { background: #f1c40f; color: #000; }
-  .ufc { background: #e67e22; }
-  .nba { background: #1abc9c; }
-  .nhl { background: #34495e; }
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background:
+    linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+    url("bg.jpg") center center / cover no-repeat;
+  color: #fff;
+}
+
+/* ===== CLOCK ===== */
+.clock {
+  margin-top: 40px;
+  font-size: 96px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* ===== SEARCH ===== */
+.search-box {
+  margin: 30px 0 50px;
+}
+.search-box form {
+  display: flex;
+  align-items: center;
+  background: #111;
+  border-radius: 50px;
+  padding: 12px 25px;
+  width: 700px;
+  max-width: 90vw;
+}
+.search-box img {
+  width: 28px;
+  margin-right: 15px;
+}
+.search-box input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 26px;
+}
+
+/* ===== TILES ===== */
+.tiles {
+  display: flex;
+  gap: 20px;
+}
+
+.tile {
+  width: 180px;
+  height: 110px;
+  background: linear-gradient(145deg, #1c1c1c, #0f0f0f);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,.6);
+  transition: transform .2s, box-shadow .2s;
+  outline: none;
+}
+.tile img {
+  width: 42px;
+  margin-bottom: 8px;
+}
+.tile span {
+  font-size: 18px;
+}
+
+/* ===== FOCUS (REMOTE CONTROL) ===== */
+.tile:focus {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 3px #00e5ff, 0 20px 40px rgba(0,0,0,.9);
+}
+
+/* center everything */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 </style>
 </head>
+
 <body>
-<div class="clock" id="clock"></div>
-<div class="search-container">
-  <img src="https://www.google.com/favicon.ico" alt="Google">
-  <form action="https://www.google.com/search" target="_blank">
-    <input type="text" name="q" placeholder="Поиск Google" />
-  </form>
+<div class="wrapper">
+
+  <!-- CLOCK -->
+  <div class="clock" id="clock">00:00</div>
+
+  <!-- SEARCH -->
+  <div class="search-box">
+    <form action="https://www.google.com/search" method="get">
+      <img src="https://www.google.com/favicon.ico">
+      <input type="text" name="q" placeholder="Поиск Google">
+    </form>
+  </div>
+
+  <!-- TILES -->
+  <div class="tiles">
+    <a class="tile" href="https://news.sportbox.ru/" tabindex="0">
+      <img src="https://news.sportbox.ru/favicon.ico">
+      <span>Sportbox</span>
+    </a>
+
+    <a class="tile" href="https://www.gismeteo.kz/weather-petropavlovsk-4574/10-days/" tabindex="0">
+      <img src="https://www.gismeteo.kz/favicon.ico">
+      <span>Gismeteo</span>
+    </a>
+
+    <a class="tile" href="https://androidtvbox.ru/" tabindex="0">
+      <img src="https://androidtvbox.ru/favicon.ico">
+      <span>Android TV</span>
+    </a>
+
+    <a class="tile" href="http://new-rutor.org/browse/0/1/0/4/" tabindex="0">
+      <img src="https://new-rutor.org/favicon.ico">
+      <span>Rutor</span>
+    </a>
+
+    <a class="tile" href="https://rutracker.me/forum/tracker.php" tabindex="0">
+      <img src="https://rutracker.me/favicon.ico">
+      <span>Rutracker</span>
+    </a>
+
+    <a class="tile" href="https://rutracker.me/forum/tracker.php?nm=ufc" tabindex="0">
+      <span>UFC</span>
+    </a>
+
+    <a class="tile" href="https://rutracker.me/forum/tracker.php?f=1997,259&nm=nba" tabindex="0">
+      <span>NBA</span>
+    </a>
+
+    <a class="tile" href="https://rutracker.me/forum/tracker.php?f=259&nm=nhl" tabindex="0">
+      <span>NHL</span>
+    </a>
+  </div>
+
 </div>
-<div class="tiles">
-  <a href="https://news.sportbox.ru/?ysclid=miwhp52i4e176879947" class="tile sportbox">Sportbox</a>
-  <a href="https://www.gismeteo.kz/weather-petropavlovsk-4574/10-days/" class="tile gismeteo">Gismeteo</a>
-  <a href="https://androidtvbox.ru/" class="tile androidtv">Android TV</a>
-  <a href="http://new-rutor.org/browse/0/1/0/4/" class="tile rutor">Rutor</a>
-  <a href="https://rutracker.me/forum/tracker.php" class="tile rutracker">Rutracker</a>
-  <a href="https://rutracker.me/forum/tracker.php?nm=ufc" class="tile ufc">UFC</a>
-  <a href="https://rutracker.me/forum/tracker.php?f=1997,259&nm=nba" class="tile nba">NBA</a>
-  <a href="https://rutracker.me/forum/tracker.php?f=259&nm=nhl" class="tile nhl">NHL</a>
-</div>
+
 <script>
-  function updateClock() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2,'0');
-    const minutes = String(now.getMinutes()).padStart(2,'0');
-    const seconds = String(now.getSeconds()).padStart(2,'0');
-    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-  }
-  setInterval(updateClock, 1000);
-  updateClock();
+function updateClock() {
+  const d = new Date();
+  document.getElementById("clock").textContent =
+    d.getHours().toString().padStart(2,"0") + ":" +
+    d.getMinutes().toString().padStart(2,"0");
+}
+setInterval(updateClock, 1000);
+updateClock();
 </script>
+
 </body>
 </html>
-
-
-
-
